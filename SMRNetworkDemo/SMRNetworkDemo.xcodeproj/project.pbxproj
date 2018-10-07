@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63884688C741C330D05CF5D5 /* Pods_SMRNetworkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDE72D36733793B817ABD2F /* Pods_SMRNetworkDemo.framework */; };
+		FE9AD8FF21683F3000D4406B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD8FE21683F3000D4406B /* AppDelegate.m */; };
+		FE9AD90221683F3000D4406B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD90121683F3000D4406B /* ViewController.m */; };
+		FE9AD90521683F3000D4406B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9AD90321683F3000D4406B /* Main.storyboard */; };
+		FE9AD90721683F3C00D4406B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9AD90621683F3C00D4406B /* Assets.xcassets */; };
+		FE9AD90D21683F3C00D4406B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD90C21683F3C00D4406B /* main.m */; };
+		FE9AD91721683F3D00D4406B /* SMRNetworkDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD91621683F3D00D4406B /* SMRNetworkDemoTests.m */; };
+		FE9AD9252168FBFB00D4406B /* SMRNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD9242168FBFB00D4406B /* SMRNetManager.m */; };
+		FE9AD9282168FC2300D4406B /* SMRNetAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD9272168FC2300D4406B /* SMRNetAPI.m */; };
+		FE9AD930216902D200D4406B /* SMRHomeDal.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD92F216902D200D4406B /* SMRHomeDal.m */; };
+		FE9AD9332169037500D4406B /* SMRHomeBll.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD9322169037500D4406B /* SMRHomeBll.m */; };
+		FE9AD936216908EB00D4406B /* SMRNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD935216908EB00D4406B /* SMRNetConfig.m */; };
+		FE9AD939216A3CFB00D4406B /* SMRNetErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD938216A3CFB00D4406B /* SMRNetErrors.m */; };
+		FE9AD93C216A3F3500D4406B /* SMRNetCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD93B216A3F3500D4406B /* SMRNetCache.m */; };
+		FE9AD93F216A3F5200D4406B /* SMRNetCachePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD93E216A3F5200D4406B /* SMRNetCachePolicy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE9AD91321683F3D00D4406B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE9AD8F221683F3000D4406B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE9AD8F921683F3000D4406B;
+			remoteInfo = SMRNetworkDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A39C337E1A94749E0C8F12B4 /* Pods-SMRNetworkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMRNetworkDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SMRNetworkDemo/Pods-SMRNetworkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DBB1D704F7AC5C16CAE2D963 /* Pods-SMRNetworkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMRNetworkDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SMRNetworkDemo/Pods-SMRNetworkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DEDE72D36733793B817ABD2F /* Pods_SMRNetworkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMRNetworkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE9AD8FA21683F3000D4406B /* SMRNetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMRNetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE9AD8FD21683F3000D4406B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE9AD8FE21683F3000D4406B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE9AD90021683F3000D4406B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE9AD90121683F3000D4406B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE9AD90421683F3000D4406B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE9AD90621683F3C00D4406B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE9AD90B21683F3C00D4406B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE9AD90C21683F3C00D4406B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE9AD91221683F3D00D4406B /* SMRNetworkDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMRNetworkDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE9AD91621683F3D00D4406B /* SMRNetworkDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetworkDemoTests.m; sourceTree = "<group>"; };
+		FE9AD91821683F3D00D4406B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE9AD9222168FBEB00D4406B /* SMRNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetwork.h; sourceTree = "<group>"; };
+		FE9AD9232168FBFB00D4406B /* SMRNetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetManager.h; sourceTree = "<group>"; };
+		FE9AD9242168FBFB00D4406B /* SMRNetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetManager.m; sourceTree = "<group>"; };
+		FE9AD9262168FC2300D4406B /* SMRNetAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetAPI.h; sourceTree = "<group>"; };
+		FE9AD9272168FC2300D4406B /* SMRNetAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetAPI.m; sourceTree = "<group>"; };
+		FE9AD92E216902D200D4406B /* SMRHomeDal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRHomeDal.h; sourceTree = "<group>"; };
+		FE9AD92F216902D200D4406B /* SMRHomeDal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRHomeDal.m; sourceTree = "<group>"; };
+		FE9AD9312169037500D4406B /* SMRHomeBll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRHomeBll.h; sourceTree = "<group>"; };
+		FE9AD9322169037500D4406B /* SMRHomeBll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRHomeBll.m; sourceTree = "<group>"; };
+		FE9AD934216908EB00D4406B /* SMRNetConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetConfig.h; sourceTree = "<group>"; };
+		FE9AD935216908EB00D4406B /* SMRNetConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetConfig.m; sourceTree = "<group>"; };
+		FE9AD937216A3CFB00D4406B /* SMRNetErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetErrors.h; sourceTree = "<group>"; };
+		FE9AD938216A3CFB00D4406B /* SMRNetErrors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetErrors.m; sourceTree = "<group>"; };
+		FE9AD93A216A3F3500D4406B /* SMRNetCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetCache.h; sourceTree = "<group>"; };
+		FE9AD93B216A3F3500D4406B /* SMRNetCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetCache.m; sourceTree = "<group>"; };
+		FE9AD93D216A3F5200D4406B /* SMRNetCachePolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetCachePolicy.h; sourceTree = "<group>"; };
+		FE9AD93E216A3F5200D4406B /* SMRNetCachePolicy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetCachePolicy.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE9AD8F721683F3000D4406B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63884688C741C330D05CF5D5 /* Pods_SMRNetworkDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE9AD90F21683F3D00D4406B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F876A9FC1CA35839E654A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A39C337E1A94749E0C8F12B4 /* Pods-SMRNetworkDemo.debug.xcconfig */,
+				DBB1D704F7AC5C16CAE2D963 /* Pods-SMRNetworkDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		269602FBB8D2FC1E9BACD051 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEDE72D36733793B817ABD2F /* Pods_SMRNetworkDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE9AD8F121683F3000D4406B = {
+			isa = PBXGroup;
+			children = (
+				FE9AD92121685A7E00D4406B /* SMRNetwork */,
+				FE9AD8FC21683F3000D4406B /* SMRNetworkDemo */,
+				FE9AD91521683F3D00D4406B /* SMRNetworkDemoTests */,
+				FE9AD8FB21683F3000D4406B /* Products */,
+				01F876A9FC1CA35839E654A0 /* Pods */,
+				269602FBB8D2FC1E9BACD051 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FE9AD8FB21683F3000D4406B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AD8FA21683F3000D4406B /* SMRNetworkDemo.app */,
+				FE9AD91221683F3D00D4406B /* SMRNetworkDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE9AD8FC21683F3000D4406B /* SMRNetworkDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AD8FD21683F3000D4406B /* AppDelegate.h */,
+				FE9AD8FE21683F3000D4406B /* AppDelegate.m */,
+				FE9AD90021683F3000D4406B /* ViewController.h */,
+				FE9AD90121683F3000D4406B /* ViewController.m */,
+				FE9AD9292169005300D4406B /* BussinessLogicalLayer */,
+				FE9AD92A2169005300D4406B /* DataAccessLayter */,
+				FE9AD90321683F3000D4406B /* Main.storyboard */,
+				FE9AD90621683F3C00D4406B /* Assets.xcassets */,
+				FE9AD90B21683F3C00D4406B /* Info.plist */,
+				FE9AD90C21683F3C00D4406B /* main.m */,
+			);
+			path = SMRNetworkDemo;
+			sourceTree = "<group>";
+		};
+		FE9AD91521683F3D00D4406B /* SMRNetworkDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AD91621683F3D00D4406B /* SMRNetworkDemoTests.m */,
+				FE9AD91821683F3D00D4406B /* Info.plist */,
+			);
+			path = SMRNetworkDemoTests;
+			sourceTree = "<group>";
+		};
+		FE9AD92121685A7E00D4406B /* SMRNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AD9222168FBEB00D4406B /* SMRNetwork.h */,
+				FE9AD9232168FBFB00D4406B /* SMRNetManager.h */,
+				FE9AD9242168FBFB00D4406B /* SMRNetManager.m */,
+				FE9AD934216908EB00D4406B /* SMRNetConfig.h */,
+				FE9AD935216908EB00D4406B /* SMRNetConfig.m */,
+				FE9AD9262168FC2300D4406B /* SMRNetAPI.h */,
+				FE9AD9272168FC2300D4406B /* SMRNetAPI.m */,
+				FE9AD937216A3CFB00D4406B /* SMRNetErrors.h */,
+				FE9AD938216A3CFB00D4406B /* SMRNetErrors.m */,
+				FE9AD93A216A3F3500D4406B /* SMRNetCache.h */,
+				FE9AD93B216A3F3500D4406B /* SMRNetCache.m */,
+				FE9AD93D216A3F5200D4406B /* SMRNetCachePolicy.h */,
+				FE9AD93E216A3F5200D4406B /* SMRNetCachePolicy.m */,
+			);
+			name = SMRNetwork;
+			path = ../SMRNetwork;
+			sourceTree = "<group>";
+		};
+		FE9AD9292169005300D4406B /* BussinessLogicalLayer */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AD9312169037500D4406B /* SMRHomeBll.h */,
+				FE9AD9322169037500D4406B /* SMRHomeBll.m */,
+			);
+			path = BussinessLogicalLayer;
+			sourceTree = "<group>";
+		};
+		FE9AD92A2169005300D4406B /* DataAccessLayter */ = {
+			isa = PBXGroup;
+			children = (
+				FE9AD92E216902D200D4406B /* SMRHomeDal.h */,
+				FE9AD92F216902D200D4406B /* SMRHomeDal.m */,
+			);
+			path = DataAccessLayter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE9AD8F921683F3000D4406B /* SMRNetworkDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE9AD91B21683F3D00D4406B /* Build configuration list for PBXNativeTarget "SMRNetworkDemo" */;
+			buildPhases = (
+				A202E9EDF58C324D0ECA3237 /* [CP] Check Pods Manifest.lock */,
+				FE9AD8F621683F3000D4406B /* Sources */,
+				FE9AD8F721683F3000D4406B /* Frameworks */,
+				FE9AD8F821683F3000D4406B /* Resources */,
+				336C7CA84386EAA4D107D7AD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMRNetworkDemo;
+			productName = SMRNetworkDemo;
+			productReference = FE9AD8FA21683F3000D4406B /* SMRNetworkDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE9AD91121683F3D00D4406B /* SMRNetworkDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE9AD91E21683F3D00D4406B /* Build configuration list for PBXNativeTarget "SMRNetworkDemoTests" */;
+			buildPhases = (
+				FE9AD90E21683F3D00D4406B /* Sources */,
+				FE9AD90F21683F3D00D4406B /* Frameworks */,
+				FE9AD91021683F3D00D4406B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE9AD91421683F3D00D4406B /* PBXTargetDependency */,
+			);
+			name = SMRNetworkDemoTests;
+			productName = SMRNetworkDemoTests;
+			productReference = FE9AD91221683F3D00D4406B /* SMRNetworkDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE9AD8F221683F3000D4406B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = sumrise.com;
+				TargetAttributes = {
+					FE9AD8F921683F3000D4406B = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					FE9AD91121683F3D00D4406B = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = FE9AD8F921683F3000D4406B;
+					};
+				};
+			};
+			buildConfigurationList = FE9AD8F521683F3000D4406B /* Build configuration list for PBXProject "SMRNetworkDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE9AD8F121683F3000D4406B;
+			productRefGroup = FE9AD8FB21683F3000D4406B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE9AD8F921683F3000D4406B /* SMRNetworkDemo */,
+				FE9AD91121683F3D00D4406B /* SMRNetworkDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE9AD8F821683F3000D4406B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE9AD90721683F3C00D4406B /* Assets.xcassets in Resources */,
+				FE9AD90521683F3000D4406B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE9AD91021683F3D00D4406B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		336C7CA84386EAA4D107D7AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SMRNetworkDemo/Pods-SMRNetworkDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SMRNetworkDemo/Pods-SMRNetworkDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A202E9EDF58C324D0ECA3237 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SMRNetworkDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE9AD8F621683F3000D4406B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE9AD93F216A3F5200D4406B /* SMRNetCachePolicy.m in Sources */,
+				FE9AD936216908EB00D4406B /* SMRNetConfig.m in Sources */,
+				FE9AD939216A3CFB00D4406B /* SMRNetErrors.m in Sources */,
+				FE9AD90221683F3000D4406B /* ViewController.m in Sources */,
+				FE9AD90D21683F3C00D4406B /* main.m in Sources */,
+				FE9AD9332169037500D4406B /* SMRHomeBll.m in Sources */,
+				FE9AD9252168FBFB00D4406B /* SMRNetManager.m in Sources */,
+				FE9AD9282168FC2300D4406B /* SMRNetAPI.m in Sources */,
+				FE9AD93C216A3F3500D4406B /* SMRNetCache.m in Sources */,
+				FE9AD8FF21683F3000D4406B /* AppDelegate.m in Sources */,
+				FE9AD930216902D200D4406B /* SMRHomeDal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE9AD90E21683F3D00D4406B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE9AD91721683F3D00D4406B /* SMRNetworkDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE9AD91421683F3D00D4406B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE9AD8F921683F3000D4406B /* SMRNetworkDemo */;
+			targetProxy = FE9AD91321683F3D00D4406B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE9AD90321683F3000D4406B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE9AD90421683F3000D4406B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE9AD91921683F3D00D4406B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE9AD91A21683F3D00D4406B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE9AD91C21683F3D00D4406B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39C337E1A94749E0C8F12B4 /* Pods-SMRNetworkDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SMRNetworkDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sumrise.com.SMRNetworkDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE9AD91D21683F3D00D4406B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBB1D704F7AC5C16CAE2D963 /* Pods-SMRNetworkDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SMRNetworkDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sumrise.com.SMRNetworkDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FE9AD91F21683F3D00D4406B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SMRNetworkDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sumrise.com.SMRNetworkDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMRNetworkDemo.app/SMRNetworkDemo";
+			};
+			name = Debug;
+		};
+		FE9AD92021683F3D00D4406B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SMRNetworkDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sumrise.com.SMRNetworkDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMRNetworkDemo.app/SMRNetworkDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE9AD8F521683F3000D4406B /* Build configuration list for PBXProject "SMRNetworkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE9AD91921683F3D00D4406B /* Debug */,
+				FE9AD91A21683F3D00D4406B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE9AD91B21683F3D00D4406B /* Build configuration list for PBXNativeTarget "SMRNetworkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE9AD91C21683F3D00D4406B /* Debug */,
+				FE9AD91D21683F3D00D4406B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE9AD91E21683F3D00D4406B /* Build configuration list for PBXNativeTarget "SMRNetworkDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE9AD91F21683F3D00D4406B /* Debug */,
+				FE9AD92021683F3D00D4406B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE9AD8F221683F3000D4406B /* Project object */;
+}

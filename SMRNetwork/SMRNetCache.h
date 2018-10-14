@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@interface SMRNetCachePolicy : NSObject
+
+@property (copy  , nonatomic) NSString *identifier; ///< identifier标识一个cache
+@property (copy  , nonatomic) NSString *cacheKey;   ///< cacheKey相匹配时才取出cache
+
++ (instancetype)policyWithIdentifier:(NSString *)identifier cacheKey:(NSString *)cacheKey;
+
+@end
+
 @class SMRNetCachePolicy;
 @interface SMRNetCache : NSObject
 

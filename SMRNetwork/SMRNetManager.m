@@ -11,12 +11,15 @@
 #import "SMRNetAPI.h"
 #import "SMRNetErrors.h"
 #import "SMRNetCache.h"
-#import <AFNetworking/AFNetworking.h>
+#import "SMRNetAPIOption.h"
+#import "SMRNetAPIOptionQueue.h"
+#import "AFHTTPSessionManager+SMRNet.h"
 
 @interface SMRNetManager ()
 
 @property (strong, nonatomic) SMRNetConfig *config;
 @property (strong, nonatomic) SMRNetCache *netCache;
+@property (strong, nonatomic) SMRNetAPIOptionQueue *netAPIQueue;
 @property (strong, nonatomic) AFHTTPSessionManager *afnManger;
 
 @end
@@ -60,38 +63,62 @@
         cacheBlock(api, response);
     }
     
-    __weak typeof(self) weakSelf = self;
-    // request
-    if ([api.method isEqualToString:SMRReqeustMethodGet]) {
-        NSURLSessionTask *task = [self.afnManger GET:api.url parameters:api.params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [api fillResponse:responseObject error:nil];
-            if (!responseObject[@"error"]) {
-                if (api.cachePolicy) {
-                    [strongSelf.netCache addCache:responseObject policy:api.cachePolicy];
-                }
-                if (successBlock) {
-                    successBlock(api, responseObject);
-                }
-            } else {
-                if (faildBlock) {
-                    faildBlock(api, responseObject, [SMRNetErrors errorForNetSerivceDomain]);
-                }
-            }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [api fillResponse:nil error:error];
-            if (faildBlock) {
-                faildBlock(api, nil, error);
-            }
-        }];
-        [api fillSessionTask:task];
-    }
+    SMRNetAPIOption *option = [SMRNetAPIOption optionWithAPI:api
+                                                successBlock:successBlock
+                                                  faildBlock:faildBlock
+                                              uploadProgress:nil
+                                            downloadProgress:nil];
+//    [self.netAPIQueue enqueue:option];
+    [self queryOption:option manager:self.afnManger];
 }
 - (void)requestSerialAPIs:(NSArray<SMRNetAPI *> *)apis
                cacheBlock:(void (^)(SMRNetAPI *api ,id response, BOOL finished, BOOL *stop))cacheBlock
              successBlock:(void (^)(SMRNetAPI *api ,id response, BOOL finished, BOOL *stop))successBlock
                faildBlock:(void (^)(SMRNetAPI *api ,id response, NSError *error, BOOL finished, BOOL *stop))faildBlock {
     
+}
+
+#pragma mark - Query
+
+- (void)queryOption:(SMRNetAPIOption *)option manager:(AFHTTPSessionManager *)manager {
+    SMRNetAPI *api = option.api;
+    __weak typeof(self) weakSelf = self;
+    // request
+    if ([manager respondsToSelector:@selector(dataTaskWithHTTPMethod:URLString:parameters:uploadProgress:downloadProgress:success:failure:)]) {
+        NSURLSessionTask *task = [manager dataTaskWithHTTPMethod:api.method URLString:api.url parameters:api.params uploadProgress:^(NSProgress *uploadProgress) {
+            if (option.uploadProgress) {
+                option.uploadProgress(api, uploadProgress);
+            }
+        } downloadProgress:^(NSProgress *downloadProgress) {
+            if (option.downloadProgress) {
+                option.downloadProgress(api, downloadProgress);
+            }
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [api fillResponse:responseObject error:nil];
+            if ([responseObject isKindOfClass:[NSDictionary class]] && responseObject[@"error"]) {
+                if (option.faildBlock) {
+                    option.faildBlock(api, responseObject, [SMRNetErrors errorForNetSerivceDomain]);
+                }
+            } else {
+                if (api.cachePolicy) {
+                    [strongSelf.netCache addCache:responseObject policy:api.cachePolicy];
+                }
+                if (option.successBlock) {
+                    option.successBlock(api, responseObject);
+                }
+            }
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            [api fillResponse:nil error:error];
+            if (option.faildBlock) {
+                option.faildBlock(api, nil, error);
+            }
+        }];
+        [api fillDataTask:task];
+        [task resume];
+    } else {
+        NSAssert(NO, @"AFNetwork版本可能与SMRNetwork不匹配,请更新SMRNetwork!");
+    }
 }
 
 #pragma mark - Getters
@@ -109,6 +136,13 @@
         _netCache = [[SMRNetCache alloc] init];
     }
     return _netCache;
+}
+
+- (SMRNetAPIOptionQueue *)netAPIQueue {
+    if (!_netAPIQueue) {
+        _netAPIQueue = [[SMRNetAPIOptionQueue alloc] init];
+    }
+    return _netAPIQueue;
 }
 
 - (AFHTTPSessionManager *)afnManger {

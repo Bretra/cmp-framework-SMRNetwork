@@ -14,6 +14,5 @@
 #import "SMRNetConfig.h"
 #import "SMRNetErrors.h"
 #import "SMRNetCache.h"
-#import "SMRNetCachePolicy.h"
 
 #endif /* SMRNetwork_h */

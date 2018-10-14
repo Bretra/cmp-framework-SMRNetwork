@@ -7,7 +7,7 @@
 //
 
 #import "SMRNetAPI.h"
-#import "SMRNetCachePolicy.h"
+#import "SMRNetCache.h"
 
 SMRReqeustMethod const SMRReqeustMethodGet      = @"GET";
 SMRReqeustMethod const SMRReqeustMethodPost     = @"POST";
@@ -19,9 +19,13 @@ SMRReqeustMethod const SMRReqeustMethodDelete   = @"DELTE";
 @end
 
 @implementation SMRNetAPI
-@synthesize sessionTast = _sessionTast;
+@synthesize dataTask = _dataTask;
 @synthesize response = _response;
 @synthesize error = _error;
+
+- (void)dealloc {
+    NSLog(@"释放对象:%@", self);
+}
 
 + (instancetype)apiWithIdentifier:(NSString *)identifier method:(SMRReqeustMethod)method url:(NSString *)url params:(NSDictionary *)params {
     SMRNetAPI *api = [[SMRNetAPI alloc] init];
@@ -33,11 +37,12 @@ SMRReqeustMethod const SMRReqeustMethodDelete   = @"DELTE";
     return api;
 }
 
-- (void)fillSessionTask:(NSURLSessionTask *)sessionTask {
-    
+- (void)fillDataTask:(NSURLSessionTask *)dataTask {
+    _dataTask = dataTask;
 }
 - (void)fillResponse:(id)response error:(NSError *)error {
-    
+    _response = response;
+    _error = error;
 }
 
 @end

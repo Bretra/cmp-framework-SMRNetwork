@@ -7,13 +7,23 @@
 //
 
 #import "SMRNetCache.h"
-#import "SMRNetCachePolicy.h"
 
-NSString * const kCacheForSMRNet = @"kCacheForSMRNet";
+@implementation SMRNetCachePolicy
+
++ (instancetype)policyWithIdentifier:(NSString *)identifier cacheKey:(NSString *)cacheKey {
+    SMRNetCachePolicy *policy = [[SMRNetCachePolicy alloc] init];
+    policy.identifier = identifier;
+    policy.cacheKey = cacheKey;
+    return policy;
+}
+
+@end
 
 @interface SMRNetCache ()
 
 @end
+
+NSString * const kCacheForSMRNet = @"kCacheForSMRNet";
 
 @implementation SMRNetCache
 

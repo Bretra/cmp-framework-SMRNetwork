@@ -9,10 +9,11 @@
 #import "SMRNetManager.h"
 #import "SMRNetConfig.h"
 #import "SMRNetAPI.h"
-#import "SMRNetErrors.h"
+#import "SMRNetError.h"
 #import "SMRNetCache.h"
 #import "SMRNetAPIOption.h"
 #import "SMRNetAPIOptionQueue.h"
+#import "SMRNetServiceErrorHandler.h"
 #import "AFHTTPSessionManager+SMRNet.h"
 
 @interface SMRNetManager ()
@@ -97,8 +98,12 @@
             __strong typeof(weakSelf) strongSelf = weakSelf;
             [api fillResponse:responseObject error:nil];
             if ([responseObject isKindOfClass:[NSDictionary class]] && responseObject[@"error"]) {
-                if (option.faildBlock) {
-                    option.faildBlock(api, responseObject, [SMRNetErrors errorForNetSerivceDomain]);
+                BOOL shouldCallBack = YES;
+                if ([self.serviceErrorHandler respondsToSelector:@selector(shouldResponseSerivceError:response:)]) {
+                    shouldCallBack = [self.serviceErrorHandler shouldResponseSerivceError:[SMRNetError errorForNetSerivceDomain] response:responseObject];
+                }
+                if (shouldCallBack && option.faildBlock) {
+                    option.faildBlock(api, responseObject, [SMRNetError errorForNetSerivceDomain]);
                 }
             } else {
                 if (api.cachePolicy) {

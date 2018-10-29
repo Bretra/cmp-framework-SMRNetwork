@@ -12,7 +12,7 @@
 #import "SMRNetManager.h"
 #import "SMRNetAPI.h"
 #import "SMRNetConfig.h"
-#import "SMRNetErrors.h"
+#import "SMRNetError.h"
 #import "SMRNetCache.h"
 
 #endif /* SMRNetwork_h */

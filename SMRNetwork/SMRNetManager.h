@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class SMRNetServiceErrorHandler;
 @class SMRNetConfig;
 @class SMRNetAPI;
 @interface SMRNetManager : NSObject
+
+@property (strong, nonatomic) SMRNetServiceErrorHandler *serviceErrorHandler;
 
 + (instancetype)sharedManager;
 - (void)startWithConfig:(SMRNetConfig *)config;

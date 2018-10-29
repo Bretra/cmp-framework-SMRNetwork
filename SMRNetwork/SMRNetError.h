@@ -1,8 +1,8 @@
 //
-//  SMRNetErrors.h
+//  SMRNetError.h
 //  SMRNetworkDemo
 //
-//  Created by 丁治文 on 2018/10/7.
+//  Created by 丁治文 on 2018/10/29.
 //  Copyright © 2018年 sumrise.com. All rights reserved.
 //
 
@@ -15,8 +15,8 @@ typedef NS_ENUM(NSInteger, SMRErrorCode) {
     SMRServiceErrorCode     = 1001,///< 数据服务器错误,API正常响应
 };
 
-@interface SMRNetErrors : NSObject
+@interface SMRNetError : NSError
 
-+ (NSError *)errorForNetSerivceDomain;
++ (SMRNetError *)errorForNetSerivceDomain;
 
 @end

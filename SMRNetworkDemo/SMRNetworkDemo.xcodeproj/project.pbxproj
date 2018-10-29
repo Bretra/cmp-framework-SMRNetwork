@@ -19,11 +19,11 @@
 		FE9AD930216902D200D4406B /* SMRHomeDal.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD92F216902D200D4406B /* SMRHomeDal.m */; };
 		FE9AD9332169037500D4406B /* SMRHomeBll.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD9322169037500D4406B /* SMRHomeBll.m */; };
 		FE9AD936216908EB00D4406B /* SMRNetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD935216908EB00D4406B /* SMRNetConfig.m */; };
-		FE9AD939216A3CFB00D4406B /* SMRNetErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD938216A3CFB00D4406B /* SMRNetErrors.m */; };
 		FE9AD93C216A3F3500D4406B /* SMRNetCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD93B216A3F3500D4406B /* SMRNetCache.m */; };
 		FE9AD94921736EFD00D4406B /* SMRNetAPIOptionQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD94821736EFD00D4406B /* SMRNetAPIOptionQueue.m */; };
 		FE9AD94C21736F3C00D4406B /* SMRNetAPIOption.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD94B21736F3C00D4406B /* SMRNetAPIOption.m */; };
-		FE9AD94F2173A0DE00D4406B /* SMRNetServiceErrorHander.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9AD94E2173A0DE00D4406B /* SMRNetServiceErrorHander.m */; };
+		FE9EF7C821873E9200425CC5 /* SMRNetServiceErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF7C721873E9200425CC5 /* SMRNetServiceErrorHandler.m */; };
+		FE9EF7CB2187405F00425CC5 /* SMRNetError.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF7CA2187405F00425CC5 /* SMRNetError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,6 @@
 		FE9AD9322169037500D4406B /* SMRHomeBll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRHomeBll.m; sourceTree = "<group>"; };
 		FE9AD934216908EB00D4406B /* SMRNetConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetConfig.h; sourceTree = "<group>"; };
 		FE9AD935216908EB00D4406B /* SMRNetConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetConfig.m; sourceTree = "<group>"; };
-		FE9AD937216A3CFB00D4406B /* SMRNetErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetErrors.h; sourceTree = "<group>"; };
-		FE9AD938216A3CFB00D4406B /* SMRNetErrors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetErrors.m; sourceTree = "<group>"; };
 		FE9AD93A216A3F3500D4406B /* SMRNetCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetCache.h; sourceTree = "<group>"; };
 		FE9AD93B216A3F3500D4406B /* SMRNetCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetCache.m; sourceTree = "<group>"; };
 		FE9AD940217189FC00D4406B /* AFHTTPSessionManager+SMRNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+SMRNet.h"; sourceTree = "<group>"; };
@@ -72,8 +70,10 @@
 		FE9AD94821736EFD00D4406B /* SMRNetAPIOptionQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetAPIOptionQueue.m; sourceTree = "<group>"; };
 		FE9AD94A21736F3C00D4406B /* SMRNetAPIOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetAPIOption.h; sourceTree = "<group>"; };
 		FE9AD94B21736F3C00D4406B /* SMRNetAPIOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetAPIOption.m; sourceTree = "<group>"; };
-		FE9AD94D2173A0DE00D4406B /* SMRNetServiceErrorHander.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetServiceErrorHander.h; sourceTree = "<group>"; };
-		FE9AD94E2173A0DE00D4406B /* SMRNetServiceErrorHander.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetServiceErrorHander.m; sourceTree = "<group>"; };
+		FE9EF7C621873E9200425CC5 /* SMRNetServiceErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetServiceErrorHandler.h; sourceTree = "<group>"; };
+		FE9EF7C721873E9200425CC5 /* SMRNetServiceErrorHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetServiceErrorHandler.m; sourceTree = "<group>"; };
+		FE9EF7C92187405F00425CC5 /* SMRNetError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRNetError.h; sourceTree = "<group>"; };
+		FE9EF7CA2187405F00425CC5 /* SMRNetError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRNetError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +165,8 @@
 				FE9AD9222168FBEB00D4406B /* SMRNetwork.h */,
 				FE9AD9232168FBFB00D4406B /* SMRNetManager.h */,
 				FE9AD9242168FBFB00D4406B /* SMRNetManager.m */,
-				FE9AD94D2173A0DE00D4406B /* SMRNetServiceErrorHander.h */,
-				FE9AD94E2173A0DE00D4406B /* SMRNetServiceErrorHander.m */,
+				FE9EF7C621873E9200425CC5 /* SMRNetServiceErrorHandler.h */,
+				FE9EF7C721873E9200425CC5 /* SMRNetServiceErrorHandler.m */,
 				FE9AD940217189FC00D4406B /* AFHTTPSessionManager+SMRNet.h */,
 				FE9AD934216908EB00D4406B /* SMRNetConfig.h */,
 				FE9AD935216908EB00D4406B /* SMRNetConfig.m */,
@@ -176,8 +176,8 @@
 				FE9AD94B21736F3C00D4406B /* SMRNetAPIOption.m */,
 				FE9AD94721736EFD00D4406B /* SMRNetAPIOptionQueue.h */,
 				FE9AD94821736EFD00D4406B /* SMRNetAPIOptionQueue.m */,
-				FE9AD937216A3CFB00D4406B /* SMRNetErrors.h */,
-				FE9AD938216A3CFB00D4406B /* SMRNetErrors.m */,
+				FE9EF7C92187405F00425CC5 /* SMRNetError.h */,
+				FE9EF7CA2187405F00425CC5 /* SMRNetError.m */,
 				FE9AD93A216A3F3500D4406B /* SMRNetCache.h */,
 				FE9AD93B216A3F3500D4406B /* SMRNetCache.m */,
 			);
@@ -344,8 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9AD936216908EB00D4406B /* SMRNetConfig.m in Sources */,
-				FE9AD94F2173A0DE00D4406B /* SMRNetServiceErrorHander.m in Sources */,
-				FE9AD939216A3CFB00D4406B /* SMRNetErrors.m in Sources */,
+				FE9EF7C821873E9200425CC5 /* SMRNetServiceErrorHandler.m in Sources */,
 				FE9AD90221683F3000D4406B /* ViewController.m in Sources */,
 				FE9AD90D21683F3C00D4406B /* main.m in Sources */,
 				FE9AD94C21736F3C00D4406B /* SMRNetAPIOption.m in Sources */,
@@ -354,6 +353,7 @@
 				FE9AD9282168FC2300D4406B /* SMRNetAPI.m in Sources */,
 				FE9AD93C216A3F3500D4406B /* SMRNetCache.m in Sources */,
 				FE9AD8FF21683F3000D4406B /* AppDelegate.m in Sources */,
+				FE9EF7CB2187405F00425CC5 /* SMRNetError.m in Sources */,
 				FE9AD930216902D200D4406B /* SMRHomeDal.m in Sources */,
 				FE9AD94921736EFD00D4406B /* SMRNetAPIOptionQueue.m in Sources */,
 			);

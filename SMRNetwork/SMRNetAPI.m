@@ -27,13 +27,14 @@ SMRReqeustMethod const SMRReqeustMethodDelete   = @"DELTE";
     NSLog(@"释放对象:%@", self);
 }
 
-+ (instancetype)apiWithIdentifier:(NSString *)identifier method:(SMRReqeustMethod)method url:(NSString *)url params:(NSDictionary *)params {
++ (instancetype)apiWithIdentifier:(NSString *)identifier method:(SMRReqeustMethod)method url:(NSString *)url params:(NSDictionary *)params useCache:(BOOL)useCache {
     SMRNetAPI *api = [[SMRNetAPI alloc] init];
     api.identifier = identifier;
     api.method = method;
     api.url = url;
     api.params = params;
-    api.cachePolicy = [SMRNetCachePolicy policyWithIdentifier:identifier cacheKey:url];
+    api.timeoutInterval = 30;
+    api.cachePolicy = useCache?[SMRNetCachePolicy policyWithIdentifier:identifier cacheKey:url]:nil;
     return api;
 }
 

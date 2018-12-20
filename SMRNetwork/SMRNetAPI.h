@@ -22,6 +22,7 @@ extern SMRReqeustMethod const SMRReqeustMethodDelete;
 @property (copy  , nonatomic) NSString *url;
 @property (strong, nonatomic) NSDictionary *params;
 @property (strong, nonatomic) SMRNetCachePolicy *cachePolicy;   ///< 缓存策略,默认nil
+@property (assign, nonatomic) NSTimeInterval timeoutInterval;           ///< 超时时间(s),默认0
 
 @property (strong, nonatomic, readonly) NSURLSessionTask *dataTask;  /// API创建的任务,API发起后才能获取到值
 @property (strong, nonatomic, readonly) id response;                    ///< API请求成功后的返回结果
@@ -30,7 +31,8 @@ extern SMRReqeustMethod const SMRReqeustMethodDelete;
 + (instancetype)apiWithIdentifier:(NSString *)identifier
                            method:(SMRReqeustMethod)method
                               url:(NSString *)url
-                           params:(NSDictionary *)params;
+                           params:(NSDictionary *)params
+                         useCache:(BOOL)useCache;
 
 - (void)fillDataTask:(NSURLSessionTask *)dataTask;
 - (void)fillResponse:(id)response error:(NSError *)error;

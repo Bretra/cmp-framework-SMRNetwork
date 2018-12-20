@@ -86,6 +86,7 @@
     __weak typeof(self) weakSelf = self;
     // request
     if ([manager respondsToSelector:@selector(dataTaskWithHTTPMethod:URLString:parameters:uploadProgress:downloadProgress:success:failure:)]) {
+        manager.requestSerializer.timeoutInterval = api.timeoutInterval;
         NSURLSessionTask *task = [manager dataTaskWithHTTPMethod:api.method URLString:api.url parameters:api.params uploadProgress:^(NSProgress *uploadProgress) {
             if (option.uploadProgress) {
                 option.uploadProgress(api, uploadProgress);

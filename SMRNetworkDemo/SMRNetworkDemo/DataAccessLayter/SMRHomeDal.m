@@ -17,7 +17,8 @@
     SMRNetAPI *api = [SMRNetAPI apiWithIdentifier:@"getHomeInfoWithUserName"
                                            method:SMRReqeustMethodGet
                                               url:url
-                                           params:params];
+                                           params:params
+                                         useCache:YES];
     return api;
 }
 

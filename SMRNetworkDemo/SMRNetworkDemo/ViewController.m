@@ -26,14 +26,26 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"开始请求...");
+    NSLog(@"开始请求1...");
     SMRNetAPI *homeInfoAPI = [self.homeBll getHomeInfoWithUserName:@"name"];
     [[SMRNetManager sharedManager] requestAPI:homeInfoAPI cacheBlock:^(SMRNetAPI *api, id response) {
-        NSLog(@"得到缓存:%@", response);
+        NSLog(@"得到缓存1:%@", nil);
     } successBlock:^(SMRNetAPI *api, id response) {
-        NSLog(@"请求成功:%@", response);
+        NSLog(@"请求成功1:%@", nil);
     } faildBlock:^(SMRNetAPI *api, id response, NSError *error) {
-        NSLog(@"请求失败:%@", response);
+        NSLog(@"请求失败1:%@\n%@", response, error);
+    }];
+    
+    [NSThread sleepForTimeInterval:3];
+    
+    NSLog(@"开始请求2...");
+    SMRNetAPI *homeInfoAPI2 = [self.homeBll getHomeInfoWithUserName:@"name"];
+    [[SMRNetManager sharedManager] requestAPI:homeInfoAPI2 cacheBlock:^(SMRNetAPI *api, id response) {
+        NSLog(@"得到缓存2:%@", nil);
+    } successBlock:^(SMRNetAPI *api, id response) {
+        NSLog(@"请求成功2:%@", nil);
+    } faildBlock:^(SMRNetAPI *api, id response, NSError *error) {
+        NSLog(@"请求失败2:%@\n%@", response, error);
     }];
 }
 

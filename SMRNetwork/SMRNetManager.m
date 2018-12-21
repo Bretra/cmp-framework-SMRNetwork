@@ -38,18 +38,7 @@
 
 - (void)startWithConfig:(SMRNetConfig *)config {
     _config = config;
-    [self configManager:self.afnManger config:config];
-}
-
-#pragma mark - Private - AFN
-- (void)configManager:(AFHTTPSessionManager *)manager config:(SMRNetConfig *)config {
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-}
-
-- (void)configReqeustHeaderWithManager:(AFHTTPSessionManager *)manager config:(SMRNetConfig *)config {
-    
+    [config configManager:self.afnManger];
 }
 
 #pragma mark - Public
@@ -69,7 +58,7 @@
                                                   faildBlock:faildBlock
                                               uploadProgress:nil
                                             downloadProgress:nil];
-//    [self.netAPIQueue enqueue:option];
+    //    [self.netAPIQueue enqueue:option];
     [self queryOption:option manager:self.afnManger];
 }
 - (void)requestSerialAPIs:(NSArray<SMRNetAPI *> *)apis
@@ -86,7 +75,11 @@
     __weak typeof(self) weakSelf = self;
     // request
     if ([manager respondsToSelector:@selector(dataTaskWithHTTPMethod:URLString:parameters:uploadProgress:downloadProgress:success:failure:)]) {
+        // 设置header
+        [self.config configReqeustHeaderWithManager:manager];
+        // 设置超时时间
         manager.requestSerializer.timeoutInterval = api.timeoutInterval;
+        // 创建task
         NSURLSessionTask *task = [manager dataTaskWithHTTPMethod:api.method URLString:api.url parameters:api.params uploadProgress:^(NSProgress *uploadProgress) {
             if (option.uploadProgress) {
                 option.uploadProgress(api, uploadProgress);
@@ -97,30 +90,38 @@
             }
         } success:^(NSURLSessionDataTask *task, id responseObject) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
+            // 保存网络请求成功的结果
             [api fillResponse:responseObject error:nil];
             if ([responseObject isKindOfClass:[NSDictionary class]] && responseObject[@"error"]) {
                 BOOL shouldCallBack = YES;
+                // 截获服务器返回的业务性错误
                 if ([self.serviceErrorHandler respondsToSelector:@selector(shouldResponseSerivceError:response:)]) {
                     shouldCallBack = [self.serviceErrorHandler shouldResponseSerivceError:[SMRNetError errorForNetSerivceDomain] response:responseObject];
                 }
+                // 失败的回调
                 if (shouldCallBack && option.faildBlock) {
                     option.faildBlock(api, responseObject, [SMRNetError errorForNetSerivceDomain]);
                 }
             } else {
+                // 请求成功之后加入缓存
                 if (api.cachePolicy) {
                     [strongSelf.netCache addCache:responseObject policy:api.cachePolicy];
                 }
+                // 请求成功的回调
                 if (option.successBlock) {
                     option.successBlock(api, responseObject);
                 }
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            // 保存网络请求失败的结果
             [api fillResponse:nil error:error];
             if (option.faildBlock) {
                 option.faildBlock(api, nil, error);
             }
         }];
+        // 保存task
         [api fillDataTask:task];
+        // 发起一个请求
         [task resume];
     } else {
         NSAssert(NO, @"AFNetwork版本可能与SMRNetwork不匹配,请更新SMRNetwork!");

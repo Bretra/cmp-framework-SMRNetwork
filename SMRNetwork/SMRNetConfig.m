@@ -7,7 +7,18 @@
 //
 
 #import "SMRNetConfig.h"
+#import "AFHTTPSessionManager.h"
 
 @implementation SMRNetConfig
+
+- (void)configManager:(AFHTTPSessionManager *)manager {
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+}
+
+- (void)configReqeustHeaderWithManager:(AFHTTPSessionManager *)manager {
+    
+}
 
 @end

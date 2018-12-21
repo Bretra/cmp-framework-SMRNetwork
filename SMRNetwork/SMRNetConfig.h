@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class AFHTTPSessionManager;
 @interface SMRNetConfig : NSObject
+
+- (void)configManager:(AFHTTPSessionManager *)manager;
+- (void)configReqeustHeaderWithManager:(AFHTTPSessionManager *)manager;
 
 @end
